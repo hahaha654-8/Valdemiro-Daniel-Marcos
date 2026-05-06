@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Direto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container fade-in">
+        <div class="card">
+            <div class="image-container">
+                <!-- Substitua o src pela sua foto -->
+                <img src="d:\Documents\sites\Valdemiro\imagem\WhatsApp Image 2026-05-06 at 06.57.41.jpeg" alt="Foto de Capa" id="profile-pic">
+            </div>
+            <div class="content">
+                <h1>Valdemiro Daniel Marcos</h1>
+                <p>Clique abaixo para iniciar o download do bloco de notas seguro via Google Drive.</p>
+                
+                <!-- Insira o link do Google Drive no href -->
+                <a href="https://drive.google.com/file/d/1nqJ6oOt746sfxoYJF-lKq4LD0syZef6E/view?usp=drive_link" class="download-btn" id="download-link" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Baixar Arquivo
+                </a>
+            </div>
+        </div>
+        <footer class="footer">
+            <p>&copy; 2026. Eng. Informática</p>
+        </footer>
+    </div>
+
+    <script>
+        // Pequeno utilitário para garantir que o link do Drive funcione como download direto
+        const linkElement = document.getElementById('download-link');
+        const rawLink = linkElement.getAttribute('href');
+        
+        if (rawLink.includes('drive.google.com') && rawLink.includes('/file/d/')) {
+            const fileId = rawLink.split('/file/d/')[1].split('/')[0];
+            linkElement.href = `https://drive.google.com/uc?export=download&id=${fileId}`;
+        }
+    </script>
+</body>
+</html>
